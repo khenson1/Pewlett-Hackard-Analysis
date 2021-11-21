@@ -1,0 +1,8 @@
+CREATE TABLE Austin Housing Market (
+  zpid INT NOT NULL,
+  zipcode INT NOT NULL,
+  latitde DATE NOT NULL,
+  longitude DATE NOT NULL,
+  latestPrice INT not NULL,
+  livingAreSQFt Int not null,
+  latest_saledate DATE not null,
