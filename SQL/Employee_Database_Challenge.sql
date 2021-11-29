@@ -65,3 +65,37 @@ inner join titles as ti
 on e.emp_no = ti.emp_no
 where e.birth_date BETWEEN '1965-01-01' AND '1965-12-31'
 order by e.emp_no
+
+--Creating a Second Mentorship Eligilibitly Table to include 1964
+SELECT DISTINCT ON (e.emp_no) e.emp_no,
+	e.first_name, 
+	e.last_name,
+	e.birth_date,
+	de.from_date,
+	de.to_date,
+	ti.title
+into Second_Mentorship_Eligibility
+from employees as e
+inner join dept_emp as de 
+on e.emp_no = de.emp_no
+inner join titles as ti 
+on e.emp_no = ti.emp_no
+where e.birth_date BETWEEN '1964-01-01' AND '1965-12-31'
+order by e.emp_no
+
+--Creating a Second Mentorship Eligilibitly Table to include 1963
+SELECT DISTINCT ON (e.emp_no) e.emp_no,
+	e.first_name, 
+	e.last_name,
+	e.birth_date,
+	de.from_date,
+	de.to_date,
+	ti.title
+into Second_Mentorship_Eligibility_1963
+from employees as e
+inner join dept_emp as de 
+on e.emp_no = de.emp_no
+inner join titles as ti 
+on e.emp_no = ti.emp_no
+where e.birth_date BETWEEN '1963-01-01' AND '1965-12-31'
+order by e.emp_no
